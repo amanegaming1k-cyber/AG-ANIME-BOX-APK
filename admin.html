@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <title>AG ANIME BOX A.P</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">AG <span>ANIME BOX</span></div>
+    <div class="admin-label">ADMIN PANEL</div>
+  </header>
+
+  <main class="container">
+    <section id="loginSection" class="panel">
+      <h1>Admin Login</h1>
+      <p>শুধু অনুমোদিত Admin প্রবেশ করতে পারবেন।</p>
+
+      <form id="loginForm">
+        <label for="email">Admin Email</label>
+        <input id="email" type="email" required
+          placeholder="admin@example.com" autocomplete="username">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" required
+          placeholder="Password" autocomplete="current-password">
+
+        <button type="submit">LOGIN</button>
+      </form>
+      <p id="loginMessage" class="message" role="status"></p>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="welcome">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p>Manage your own anime videos.</p>
+        </div>
+        <button id="logoutBtn" class="secondary">LOGOUT</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span>Total Videos</span>
+          <strong id="videoCount">0</strong>
+        </div>
+        <div class="stat">
+          <span>Account</span>
+          <strong id="adminStatus">Verified</strong>
+        </div>
+      </div>
+
+      <section class="panel">
+        <h2>Upload Anime Video</h2>
+        <form id="uploadForm">
+          <label for="title">Anime / Video Title</label>
+          <input id="title" required maxlength="120"
+            placeholder="Enter title">
+
+          <label for="category">Category</label>
+          <select id="category">
+            <option>Anime</option>
+            <option>Movie</option>
+            <option>Series</option>
+          </select>
+
+          <label for="description">Description</label>
+          <textarea id="description" maxlength="1000"
+            placeholder="Video details"></textarea>
+
+          <label for="poster">Poster Image (optional)</label>
+          <input id="poster" type="file"
+            accept="image/jpeg,image/png,image/webp">
+
+          <label for="video">Video File</label>
+          <input id="video" type="file"
+            accept="video/mp4,video/webm,video/quicktime" required>
+
+          <div class="progress-track">
+            <div id="progressBar"></div>
+          </div>
+          <p id="uploadMessage" class="message" role="status"></p>
+          <button id="uploadBtn" type="submit">UPLOAD VIDEO</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>My Videos</h2>
+        <div id="videoList" class="video-list">
+          <p>Loading videos...</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>AG ANIME BOX A.P · Admin Access Protected</footer>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
